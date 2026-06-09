@@ -113,3 +113,23 @@ class DQNAgent:
     def update_target(self) -> None:
         """Copia dura de los pesos de la red online a la red objetivo."""
         self.target.load_state_dict(self.online.state_dict())
+
+    def save(self, path: str) -> None:
+        """Guarda un checkpoint: red online, red objetivo, optimizador y pasos de aprendizaje."""
+        torch.save(
+            {
+                "online": self.online.state_dict(),
+                "target": self.target.state_dict(),
+                "optimizer": self.optimizer.state_dict(),
+                "learn_steps": self.learn_steps,
+            },
+            path,
+        )
+
+    def load(self, path: str) -> None:
+        """Restaura un checkpoint guardado con save() (continúa el entrenamiento donde quedó)."""
+        ckpt = torch.load(path, map_location=self.device)
+        self.online.load_state_dict(ckpt["online"])
+        self.target.load_state_dict(ckpt["target"])
+        self.optimizer.load_state_dict(ckpt["optimizer"])
+        self.learn_steps = ckpt["learn_steps"]
