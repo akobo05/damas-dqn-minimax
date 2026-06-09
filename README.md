@@ -3,12 +3,12 @@ Agente de Damas: DQN por auto-juego vs. Minimax con poda alfa-beta. Proyecto Fin
 
 Agentes de aprendizaje por refuerzo para damas (8×8).
 
-[![CI](https://github.com/<ORG>/<REPO>/actions/workflows/ci.yml/badge.svg)](https://github.com/<ORG>/<REPO>/actions)
+[![CI](https://github.com/<ORG>/<REPO>/actions/workflows/ci.yml/badge.svg)](https://github.com/akobo05/damas-dqn-minimax/actions)
 
 ## Instalación
 
 ```bash
-git clone https://github.com/<ORG>/<REPO>.git
+git clone https://github.com/akobo05/damas-dqn-minimax.git
 cd damas-rl
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
