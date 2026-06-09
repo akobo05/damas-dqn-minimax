@@ -3,13 +3,13 @@ Agente de Damas: DQN por auto-juego vs. Minimax con poda alfa-beta. Proyecto Fin
 
 Agentes de aprendizaje por refuerzo para damas (8×8).
 
-[![CI](https://github.com/<ORG>/<REPO>/actions/workflows/ci.yml/badge.svg)](https://github.com/akobo05/damas-dqn-minimax/actions)
+[![CI](https://github.com/akobo05/damas-dqn-minimax/actions/workflows/ci.yml/badge.svg)](https://github.com/akobo05/damas-dqn-minimax/actions)
 
 ## Instalación
 
 ```bash
 git clone https://github.com/akobo05/damas-dqn-minimax.git
-cd damas-rl
+cd damas-dqn-minimax
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
@@ -19,6 +19,20 @@ pip install -r requirements.txt
 
 ```bash
 pytest
+```
+
+## Docker (corre en cualquier máquina, sin GPU)
+
+Alternativa al `venv`: una imagen **CPU-only** que funciona igual en Windows/Mac/Linux
+sin instalar nada más que Docker. El entrenamiento del DQN con GPU se hace aparte en
+Colab/Kaggle; este contenedor cubre motor, Minimax, evaluación, tests y la demo.
+
+```bash
+# Correr la batería de tests dentro del contenedor
+docker compose run --rm tests
+
+# Levantar la demo (cuando exista demo/app.py, issue #18) en http://localhost:8501
+docker compose --profile demo up demo
 ```
 
 ## Estructura

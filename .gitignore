@@ -14,7 +14,6 @@ build/
 venv/
 env/
 .env
-.vscode/
 
 # Tests & cobertura
 .pytest_cache/
@@ -22,7 +21,7 @@ env/
 coverage.xml
 htmlcov/
 
-# PyTorch checkpoints (archivos grandes van en models/ con .gitkeep)
+# PyTorch checkpoints (archivos grandes; las carpetas se versionan con .gitkeep)
 models/*.pt
 models/*.pth
 
@@ -43,13 +42,3 @@ data/*.csv
 # OS
 .DS_Store
 Thumbs.db
-*.pyc
-.venv/
-
-.coverage
-coverage.xml
-models/*.pt
-data/*.json
-data/*.csv
-.ipynb_checkpoints/
-.DS_Store
