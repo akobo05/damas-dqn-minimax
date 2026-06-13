@@ -13,7 +13,7 @@ from damas.engine import legal_moves, State, Action
 NUM_SQUARES = 32
 NUM_ACTIONS = NUM_SQUARES * NUM_SQUARES  # 1024
 
-
+# commwnt
 def action_to_index(action: Action) -> int:
     """Índice de la cabeza de salida para una acción (usa su origen y destino)."""
     origin, destination = action[0], action[-1]
